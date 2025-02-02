@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk and Chat</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ff00;
+    }
+    #videoContainer {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    video {
+      width: 300px;
+      height: 200px;
+      background-color: #000;
+      border: 2px solid #00ff00;
+    }
+    #chat {
+      width: 600px;
+      height: 300px;
+      background-color: #000;
+      border: 2px solid #00ff00;
+      padding: 10px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+    }
+    #messageInput {
+      width: 580px;
+      padding: 10px;
+      background-color: #000;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      font-family: 'Courier New', monospace;
+    }
+    #messageInput::placeholder {
+      color: #00ff00;
+    }
+    button {
+      background-color: #000;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      padding: 10px 20px;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00ff00;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Talk and Chat</h1>
+  <div id="videoContainer">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+  <div id="chat"></div>
+  <input type="text" id="messageInput" placeholder="Type your message here...">
+  <button id="startCall">Start Call</button>
+  <button id="endCall" disabled>End Call</button>
+  <button id="sendMessage">Send</button>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
